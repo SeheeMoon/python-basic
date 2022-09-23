@@ -358,7 +358,12 @@ for guest in range (1, 51):
         print("[ ] {}번째 손님 (소요시간 : {}분)".format(guest, time))
 print("총 탑승 승객 : {} 분".format(i))
 
-print("안녕하세요")
+# 함수
+def open_account():
+    print("새로운 계좌가 생성되었습니다.")
+
+open_account()
+
         
 
 
