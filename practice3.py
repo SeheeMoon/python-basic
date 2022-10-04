@@ -60,7 +60,7 @@ class FlyableAttackUnit(AttackUnit, Flyable): # 공중 공격 유닛 클래스, 
 
     def move(self, location):
         print("[공중 유닛 이동]")
-        self.fly(self.name, location)
+        self.fly(self.name, location) # 메소드 오버라이딩
 
 
 valkyrie = FlyableAttackUnit("발키리", 130, 35, 5)
@@ -72,5 +72,54 @@ Battlecruiser = FlyableAttackUnit("배틀크루저", 400, 200, 5)
 vulture.move("5시")
 Battlecruiser.move("11시")
 
+# pass
 
+class BuildingUnit(Unit):
+    def __init__(self, name, hp, location):
+        # Unit.__init__(self, name, hp, 0)
+        super().__init__(name, hp, 0) # super 함수를 이용하면 마찬가지로 class를 상속받을 수 있는데, 이때 괄호()를 붙어주어야 하고 self는 인자로 받지 않는다.
+        self.location = location
+        print("[{} 건물이 {} 에 생성되었습니다.]".format(self.name, self.location))
 
+supply_depot = BuildingUnit("서플라이 디폿", 500, "5시")
+
+# def start_game():
+#     print("게임을 시작합니다.")
+
+# def game_over():
+#     pass
+
+# start_game()
+# game_over()
+
+# Quiz 8
+
+class House:
+    # 매물 초기화
+    def __init__(self,location, house_type, deal_type, price, completion_year):
+        self.location = location
+        self.house_type = house_type 
+        self.deal_type = deal_type
+        self.price = price
+        self.completion_year = completion_year
+
+    # 매물 정보 표시
+    def show_detail(self):
+        print(self.location, self.house_type, self.deal_type, self.price, self.completion_year)
+
+houses = []
+house1 = House("강남", "아파트", "전세", "10억", "2015년")
+house2 = House("오이도", "빌라", "매매", "7억", "2005년")
+house3 = House("영통", "오피스텔", "월세", "1000/50", "2010년")
+
+houses.append(house1)
+houses.append(house2)
+houses.append(house3)
+
+print("총 {} 대의 매물이 있습니다.".format(len(houses))) # 리스트 안의 자료형의 갯수 셀 때 len을 쓴다.
+for house in houses:
+    house.show_detail()
+
+# house1.show_detail()
+# house2.show_detail()
+# house3.show_detail()
