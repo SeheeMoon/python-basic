@@ -83,13 +83,13 @@ while(True):
         break
 
 # 모듈
-import theater_price as mv
+import lecture_clone.theater_price as mv
 
 mv.price(3)
 mv.morning_price(4)
 mv.soldier_price(5)
 
-from theater_price import *
+from lecture_clone.theater_price import *
 price(3)
 
 # from theater_price import price, morning_price
@@ -97,7 +97,7 @@ price(3)
 # morning_price(4)
 # soldier_price(3)
 
-from theater_price import soldier_price as price
+from lecture_clone.theater_price import soldier_price as price
 price(3)
 
 
